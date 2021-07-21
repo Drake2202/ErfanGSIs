@@ -142,14 +142,14 @@ if [ $MOUNTED == false ]; then
 fi
 
 if [ $AB == true ]; then
-   "$PROJECT_DIR"/make.sh "${URL}" "${SRCTYPE}" AB "$PROJECT_DIR/output" ${@} || LEAVE
+   "$PROJECT_DIR"/make.sh "${URL}" "${SRCTYPE}" AB "/var/www/html/images" ${@} || LEAVE
 fi
 
 if [ $AONLY == true ]; then
-    "$PROJECT_DIR"/make.sh "${URL}" "${SRCTYPE}" Aonly "$PROJECT_DIR/output" ${@} || LEAVE
+    "$PROJECT_DIR"/make.sh "${URL}" "${SRCTYPE}" Aonly "/var/www/html/images" ${@} || LEAVE
 fi
 
-echo "Porting ${SRCTYPENAME} GSI done on: $PROJECT_DIR/output"
+echo "Porting ${SRCTYPENAME} GSI done on: /var/www/html/images"
 
 if [[ -f "$PROJECT_DIR/private_utils.sh" ]]; then
     . "$PROJECT_DIR/private_utils.sh"
